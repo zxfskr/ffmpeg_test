@@ -1,0 +1,13 @@
+# .vscode/
+__pycache__/
+_ext
+*.py[cod]
+*$py.class
+log/
+*.log
+*.so
+.coverage
+*.orig
+test
+test_g
+*.o
