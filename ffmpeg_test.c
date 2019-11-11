@@ -43,7 +43,6 @@ static void flush_decode(AVCodecContext *dec_ctx, AVFrame *frame, FILE *f)
             exit(1);
         }
 
-
         printf("saving frame %3d\n", dec_ctx->frame_number);
         // fflush(stdout);
 

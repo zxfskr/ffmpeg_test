@@ -5,7 +5,6 @@ _ext
 *$py.class
 log/
 *.log
-*.so
 .coverage
 *.orig
 test
