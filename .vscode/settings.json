@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ffmpeg_test.h": "c",
+        "avcodec.h": "c",
+        "avdevice.h": "c",
+        "libyuv.h": "c"
+    }
+}

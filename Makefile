@@ -1,21 +1,25 @@
-ROOT_PATH=/home/zxfeng/software/ffmpeg_test
+CUR_PATH = $(shell pwd)
+COMMON_PATH = ${CUR_PATH}/../common
 
-SRC = ${wildcard  ${ROOT_PATH}/*.c} \
+SRC = ${wildcard  ${CUR_PATH}/*.c}
 
 OBJS = ${patsubst %.c, %.o, ${SRC}}
 TARGET=test_g
 CC=gcc
 CCFLAGS=-g -Wall
-LIBS=-lavformat -lavcodec -lavutil -lavfilter
+INC_DIR=-I.
+LIB_DIR=-L.
+
+LIBS=-lavformat -lavutil -lavcodec
+
 RM=rm -f
 
 ${TARGET}: ${OBJS}
-	${CC} ${OBJS} -o $@ $(LIBS)
+	${CC} ${OBJS} -o $@  ${LIB_DIR} $(LIBS)
 
 $(OBJS):%.o:%.c
-	${CC} ${CCFLAGS} -c $< -o $@ 
+	${CC} ${CCFLAGS} ${INC_DIR} -c $< -o $@
 
 .PHONY:clean
 clean:
 	$(RM) $(OBJS) ${TARGET}
-

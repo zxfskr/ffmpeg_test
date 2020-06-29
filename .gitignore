@@ -7,6 +7,7 @@ log/
 *.log
 .coverage
 *.orig
-test
-test_g
 *.o
+*.flv
+*.mp4
+*.aac
