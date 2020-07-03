@@ -9,4 +9,7 @@ ffmpeg -y -i pikachu.mp4 -c:v libx264 -c:a libfdk_aac -bsf:v h264_mp4toannexb -m
 
 
 ffmpeg -y -i pikachu.mp4 -c:v libx264 -c:a libfdk_aac -bsf:v h264_mp4toannexb -hls_segment_filename "test_%03d.ts" -hls_playlist_type vod -hls_time 12   -hls_key_info_file enc.keyinfo test.m3u8
+
+
+ffplay test.m3u8 -protocol_whitelist "file,crypto,https,tls,tcp"
 ```
