@@ -10,15 +10,15 @@ CCFLAGS=-g -Wall
 INC_DIR=-I.
 LIB_DIR=-L.
 
-LIBS=-lavformat -lavutil -lavcodec
+LIBS=-lavformat -lavutil
 
 RM=rm -f
 
 ${TARGET}: ${OBJS}
-	${CC} ${OBJS} -o $@  ${LIB_DIR} $(LIBS)
+	${CC} ${CCFLAGS} ${OBJS} -o $@  ${LIB_DIR} $(LIBS)
 
 $(OBJS):%.o:%.c
-	${CC} ${CCFLAGS} ${INC_DIR} -c $< -o $@
+	${CC} ${CCFLAGS} ${INC_DIR} -c $< -o $@ $(LIBS)
 
 .PHONY:clean
 clean:
